@@ -9,15 +9,11 @@ create distributions for frontend packages.
 It's [browserify] or [webpack] — only it produces smaller files and doesn't 
 support circular dependencies.
 
-[![Status](https://travis-ci.org/rstacruz/jsfuse.svg?branch=master)](https://travis-ci.org/rstacruz/jsfuse)  
-
 Use
 ---
 
     $ npm install -g jsfuse
     $ jsfuse your_file.js
-
-[![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/jsfuse/jsfuse "View this project on npm")
 
 Example
 -------
@@ -77,3 +73,6 @@ Authored and maintained by Rico Sta. Cruz with help from [contributors].
 [contributors]: http://github.com/rstacruz/jsfuse/contributors
 [Browserify]: http://browserify.org/
 [Webpack]: http://webpack.github.io/
+
+[![Status](https://travis-ci.org/rstacruz/jsfuse.svg?branch=master)](https://travis-ci.org/rstacruz/jsfuse)  
+[![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/jsfuse/jsfuse "View this project on npm")
