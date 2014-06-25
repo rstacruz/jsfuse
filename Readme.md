@@ -79,3 +79,6 @@ Authored and maintained by [Rico Sta. Cruz][rsc] with help from
 [c]: http://github.com/rstacruz/nprogress/contributors
 [MIT License]: http://mit-license.org/
 
+
+[Browserify]: http://browserify.org/
+[Webpack]: http://webpack.github.io/
