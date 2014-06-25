@@ -9,12 +9,6 @@ create distributions for frontend packages.
 It's [browserify] or [webpack] — only it produces smaller files and doesn't 
 support circular dependencies.
 
-Limitations:
-
- - no circular dependencies.
- - requiring a dependency more than once may end up weird.
- - doesn't support `node_modules`.
-
 #### Example
 
 ```js
@@ -45,3 +39,16 @@ Which is functionally-equivalent to:
 ```js
 alert("Hello");
 ```
+
+### Why?
+
+It's great for making frontend libraries, which usually are distributed as a 
+single `.js` file. When using browserify to build the final file, you'll get an 
+entire working CommonJS loader embedded into it, which may be unnecessary bloat.
+
+Jsfuse allows you to bake smaller files by assuming some limitations:
+
+ - circular dependencies are not allowed.
+ - requiring a dependency more than once will bloat up your file size.
+ - doesn't support `node_modules`.
+

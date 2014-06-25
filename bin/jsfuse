@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 
 var jsfuse = require('..');
+var m;
 
-console.log(jsfuse(process.argv[2]));
+try {
+  console.log(jsfuse(process.argv[2]));
+} catch (e) {
+  if (m = e.message.match(/^jsfuse\(\): (.*)$/)) {
+    console.error(" ! ERR:", m[1]);
+    process.exit(16);
+  } else {
+    throw(e);
+  }
+}
