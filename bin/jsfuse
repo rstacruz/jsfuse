@@ -7,6 +7,11 @@ if (argv[0] === '--help' || argv[0] === '-h' || !argv[0]) {
   process.exit(0);
 }
 
+if (argv[0] === '--version' || argv[0] === '-v') {
+  console.log('jsfuse', require('../package.json').version);
+  process.exit(0);
+}
+
 if (argv[0] === '--bare' || argv[0] === '-b') {
   argv.shift();
   options.bare = true;
