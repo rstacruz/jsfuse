@@ -9,7 +9,18 @@ create distributions for frontend packages.
 It's [browserify] or [webpack] — only it produces smaller files and doesn't 
 support circular dependencies.
 
-#### Example
+[![Status](https://travis-ci.org/rstacruz/jsfuse.svg?branch=master)](https://travis-ci.org/rstacruz/jsfuse)  
+
+Use
+---
+
+    $ npm install -g jsfuse
+    $ jsfuse your_file.js
+
+[![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/jsfuse/jsfuse "View this project on npm")
+
+Example
+-------
 
 ```js
 // index.js
@@ -51,4 +62,20 @@ Jsfuse allows you to bake smaller files by assuming some limitations:
  - circular dependencies are not allowed.
  - requiring a dependency more than once will bloat up your file size.
  - doesn't support `node_modules`.
+
+Acknowledgements
+----------------
+
+**Jsfuse** © 2014, Rico Sta. Cruz. Released under the [MIT License].
+
+Authored and maintained by [Rico Sta. Cruz][rsc] with help from
+[contributors][c].
+
+ * [My website](http://ricostacruz.com) (ricostacruz.com)
+ * [Github](http://github.com/rstacruz) (@rstacruz)
+ * [Twitter](http://twitter.com/rstacruz) (@rstacruz)
+
+[rsc]: http://ricostacruz.com
+[c]: http://github.com/rstacruz/nprogress/contributors
+[MIT License]: http://mit-license.org/
 
