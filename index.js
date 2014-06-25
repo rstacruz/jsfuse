@@ -19,12 +19,10 @@ module.exports = function jsfuse (file, depth) {
 
   data = data.replace(/require\(['"](\..*?)['"]\)/g, function (e, modulepath) {
     var fname = Path.join(path, modulepath + '.js');
-
-    if (files[fname]) throw new Error("jsfuse(): circular dependency: "+fname);
     files[fname] = true;
-
     var contents = jsfuse(fname, depth+1);
     return tpl.replace('...', contents);
   });
+
   return data;
 };
