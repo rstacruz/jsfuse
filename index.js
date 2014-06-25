@@ -1,28 +1,29 @@
 var Fs = require('fs'),
   Path = require('path'),
-  files, tpl =
-    "((function(){"+
+  tpl =
+    "(function(){"+
       "var module={exports:{}},exports=module.exports;"+
       "(function(){...})();"+
       "return module.exports;"+
-    "})())";
+    "}())",
+  wrapper =
+    "(function(){\n...}())";
 
 module.exports = function jsfuse (file, depth) {
   var data = Fs.readFileSync(file, 'utf-8');
   var path = Path.dirname(file);
 
   // first run
-  if (!depth) {
-    depth = 0;
-    files = {};
-  }
+  if (!depth) depth = 0;
 
   data = data.replace(/require\(['"](\..*?)['"]\)/g, function (e, modulepath) {
     var fname = Path.join(path, modulepath + '.js');
-    files[fname] = true;
     var contents = jsfuse(fname, depth+1);
     return tpl.replace('...', contents);
   });
 
-  return data;
+  if (depth === 0)
+    return wrapper.replace('...', data);
+  else
+    return data;
 };
