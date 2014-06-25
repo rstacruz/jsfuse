@@ -73,4 +73,4 @@ Authored and maintained by Rico Sta. Cruz with help from [contributors].
 [contributors]: http://github.com/rstacruz/jsfuse/contributors
 
 [![Status](https://travis-ci.org/rstacruz/jsfuse.svg?branch=master)](https://travis-ci.org/rstacruz/jsfuse)
-[![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/packages/jsfuse "View this project on npm")
+[![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/package/jsfuse "View this project on npm")
