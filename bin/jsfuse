@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 
-var m, jsfuse = require('..');
+var m, jsfuse = require('..'), argv = process.argv.slice(2), options = {};
 
-if (process.argv.length !== 3) {
+if (argv[0] === '--bare' || argv[0] === '-b') {
+  argv.shift();
+  options.bare = true;
+}
+
+var fname = argv.shift();
+if (!fname) {
   console.error("Usage: jsfuse FILE");
   process.exit(1);
 }
 
 try {
-  console.log(jsfuse(process.argv[2]));
+  console.log(jsfuse(fname, options));
 } catch (e) {
   if (m = e.message.match(/^jsfuse\(\): (.*)$/)) {
     console.error(" ! ERR:", m[1]);

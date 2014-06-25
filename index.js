@@ -9,20 +9,21 @@ var Fs = require('fs'),
   wrapper =
     "(function(){\n...}())";
 
-module.exports = function jsfuse (file, depth) {
+module.exports = function jsfuse (file, options, depth) {
   var data = Fs.readFileSync(file, 'utf-8');
   var path = Path.dirname(file);
+  if (!options) options = {};
 
   // first run
   if (!depth) depth = 0;
 
   data = data.replace(/require\(['"](\..*?)['"]\)/g, function (e, modulepath) {
     var fname = Path.join(path, modulepath + '.js');
-    var contents = jsfuse(fname, depth+1);
+    var contents = jsfuse(fname, options, depth+1);
     return tpl.replace('...', contents);
   });
 
-  if (depth === 0)
+  if (depth === 0 && !options.bare)
     return wrapper.replace('...', data);
   else
     return data;
