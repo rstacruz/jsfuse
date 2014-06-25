@@ -74,5 +74,5 @@ Authored and maintained by Rico Sta. Cruz with help from [contributors].
 [Browserify]: http://browserify.org/
 [Webpack]: http://webpack.github.io/
 
-[![Status](https://travis-ci.org/rstacruz/jsfuse.svg?branch=master)](https://travis-ci.org/rstacruz/jsfuse)  
-[![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/jsfuse/jsfuse "View this project on npm")
+[![Status](https://travis-ci.org/rstacruz/jsfuse.svg?branch=master)](https://travis-ci.org/rstacruz/jsfuse)
+[![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/packages/jsfuse "View this project on npm")
