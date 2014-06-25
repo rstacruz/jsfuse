@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+var jsfuse = require('..');
+
+console.log(jsfuse(process.argv[2]));
