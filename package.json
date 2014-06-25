@@ -9,6 +9,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "jsfuse": "./bin/jsfuse"
+  },
   "keywords": [
     "combine",
     "build",

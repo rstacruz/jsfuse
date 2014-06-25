@@ -4,13 +4,8 @@ Jsfuse
 Simple CommonJS-based JavaScript distribution builder.
 
 Replaces `require('...')` with the files they require. This makes it easy to
-create distributions for frontend packages.
-
-It's [browserify] or [webpack] — only it produces smaller files and doesn't 
-support circular dependencies.
-
-Use
----
+create distributions for frontend packages. It's like [browserify] or [webpack], only
+it produces smaller files and doesn't support circular dependencies.
 
     $ npm install -g jsfuse
     $ jsfuse your_file.js
@@ -38,16 +33,17 @@ alert((function(){
  var module={exports:{}},exports=module.exports;
  (function(){ module.exports = "Hello"; })();
  return module.exports;
-})());
+}()));
 ```
 
-Which is functionally-equivalent to:
+Which is functionally-equivalent to: (and in fact will compile down to via [closure compiler])
 
 ```js
 alert("Hello");
 ```
 
-### Why?
+Why?
+----
 
 It's great for making frontend libraries, which usually are distributed as a 
 single `.js` file. When using browserify to build the final file, you'll get an 
@@ -58,6 +54,10 @@ Jsfuse allows you to bake smaller files by assuming some limitations:
  - circular dependencies are not allowed.
  - requiring a dependency more than once will bloat up your file size.
  - doesn't support `node_modules`.
+
+[Browserify]: http://browserify.org/
+[Webpack]: http://webpack.github.io/
+[closure compiler]: https://developers.google.com/closure/compiler/
 
 Thanks
 ------
@@ -71,8 +71,6 @@ Authored and maintained by Rico Sta. Cruz with help from [contributors].
 
 [MIT License]: http://mit-license.org/
 [contributors]: http://github.com/rstacruz/jsfuse/contributors
-[Browserify]: http://browserify.org/
-[Webpack]: http://webpack.github.io/
 
 [![Status](https://travis-ci.org/rstacruz/jsfuse.svg?branch=master)](https://travis-ci.org/rstacruz/jsfuse)
 [![npm version](https://img.shields.io/npm/v/jsfuse.png)](https://npmjs.org/packages/jsfuse "View this project on npm")
