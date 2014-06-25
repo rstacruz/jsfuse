@@ -2,19 +2,18 @@
 
 var m, jsfuse = require('..'), argv = process.argv.slice(2), options = {};
 
+if (argv[0] === '--help' || argv[0] === '-h' || !argv[0]) {
+  help();
+  process.exit(0);
+}
+
 if (argv[0] === '--bare' || argv[0] === '-b') {
   argv.shift();
   options.bare = true;
 }
 
-var fname = argv.shift();
-if (!fname) {
-  console.error("Usage: jsfuse FILE");
-  process.exit(1);
-}
-
 try {
-  console.log(jsfuse(fname, options));
+  console.log(jsfuse(argv.shift(), options));
 } catch (e) {
   if (m = e.message.match(/^jsfuse\(\): (.*)$/)) {
     console.error(" ! ERR:", m[1]);
@@ -25,4 +24,13 @@ try {
   } else {
     throw(e);
   }
+}
+
+function help() {
+  console.warn("Usage: jsfuse [options] FILE");
+  console.warn("");
+  console.warn("Options:");
+  console.warn("  -b, --bare      don't wrap the output in a function");
+  console.warn("  -h, --help      show help");
+  console.warn("  -v, --version   show version");
 }
