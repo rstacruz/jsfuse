@@ -1,6 +1,6 @@
 {
   "name": "jsfuse",
-  "version": "0.9.11",
+  "version": "0.9.12",
   "description": "Simple CommonJS-based JavaScript distribution builder.",
   "main": "index.js",
   "directories": {
