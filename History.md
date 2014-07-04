@@ -1,3 +1,7 @@
+## v0.9.12 - July 4, 2014
+
+ * Suppress 'no repository field' error.
+
 ## v0.9.11 - June 25, 2014
 
  * Add `--bare` option.
