@@ -10,6 +10,8 @@ it produces smaller files and doesn't support circular dependencies.
     $ npm install -g jsfuse
     $ jsfuse your_file.js
 
+Does not support `node_modules/`.
+
 Example
 -------
 
